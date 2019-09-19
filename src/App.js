@@ -7,25 +7,16 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'James', age: 34},
-      { name: 'Linda', age: 24},
-      { name: 'JJ', age: 2}
+      { id: 'asfa1', name: 'James', age: 34},
+      { id: 'vasdf1', name: 'Linda', age: 24},
+      { id: 'asdf11', name: 'JJ', age: 2}
     ],
     otherState: 'some other value',
     showPersons: false
   };
 
 
- switchNameHandler = (newName) => {
-    // console.log('Was clicked!');
-    this.setState( {
-      persons: [
-        { name: newName, age: 34 },
-        { name: 'Linda', age: 24 },
-        { name: 'JJ', age: 1 }
-      ]
-    })
-  }
+
 
   nameChangedHandler = (event) => {
     this.setState( {
@@ -35,6 +26,13 @@ class App extends Component {
         { name: 'JJ', age: 2}
       ]
     })
+  }
+
+  deletePersonHandler = (personIndex) => {
+    // const persons = this.state.persons.slice();
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons});
   }
 
   togglePersonsHandler = () => {
@@ -59,10 +57,12 @@ render () {
   if (this.state.showPersons) {
     persons = (
       <div>
-        { this.state.persons.map(person => {
+        { this.state.persons.map((person, index) => {
           return <Person
+            click={() => this.deletePersonHandler(index)}
             name={person.name}
-            age={person.age} />
+            age={person.age}
+            key={person.id} />
         })
         }
     </div> 
