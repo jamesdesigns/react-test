@@ -48,13 +48,14 @@ class App extends Component {
 
 render () {
   const style = {
-    backgroundColor: '#00ccff',
+    backgroundColor: '#fff',
     font: 'inherit',
     border: '1px solid gray',
     borderRadius: '5px',
     padding: '8px',
-    color: 'white',
-    cursor: 'pointer'
+    color: 'black',
+    cursor: 'pointer',
+    marginBottom: '20px'
   };
 
 
