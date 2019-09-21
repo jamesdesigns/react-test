@@ -1,7 +1,7 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
 
@@ -97,6 +97,7 @@ render () {
   }
 
   return (
+    <StyleRoot>
     <div className="App">
       <h1>This is a React Test Site</h1>
       <p className={classes.join(' ')}>This is really working!</p>
@@ -105,6 +106,7 @@ render () {
       onClick={this.togglePersonsHandler}>Toggle Persons</button>
       {persons}
     </div>
+    </StyleRoot>
   );
 }
 }
