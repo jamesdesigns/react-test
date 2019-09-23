@@ -1,7 +1,7 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import './App.css';
-import Radium, { StyleRoot } from 'radium';
+// import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
 
@@ -57,11 +57,11 @@ render () {
     padding: '8px',
     color: 'white',
     cursor: 'pointer',
-    marginBottom: '20px',
-    ':hover': {
-      backgroundColor: 'lightgreen',
-      color: 'black'
-    }
+    marginBottom: '20px'
+    // ':hover': {
+    //   backgroundColor: 'lightgreen',
+    //   color: 'black'
+    // }
   };
 
 
@@ -82,10 +82,11 @@ render () {
     </div> 
     );
     style.backgroundColor = 'red';
-    style[':hover'] = {
-      backgroundColor: 'salmon',
-      color: 'black'
-    }
+
+    // style[':hover'] = {
+    //   backgroundColor: 'salmon',
+    //   color: 'black'
+    // }
   }
 
   let classes = [];
@@ -97,7 +98,7 @@ render () {
   }
 
   return (
-    <StyleRoot>
+    // <StyleRoot>
     <div className="App">
       <h1>This is a React Test Site</h1>
       <p className={classes.join(' ')}>This is really working!</p>
@@ -106,12 +107,13 @@ render () {
       onClick={this.togglePersonsHandler}>Toggle Persons</button>
       {persons}
     </div>
-    </StyleRoot>
+    // </StyleRoot>
   );
 }
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;
 
 
 
