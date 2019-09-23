@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 // import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
@@ -89,19 +89,19 @@ render () {
     // }
   }
 
-  let classes = [];
+  let assignedClasses = [];
   if (this.state.persons.length <= 2) {
-    classes.push('red'); // classes = {'red'}
+    assignedClasses.push(classes.red); // classes = {'red'}
   }
   if (this.state.persons.length <= 1) {
-    classes.push('bold'); // classes = ['red','bold']
+    assignedClasses.push(classes.bold); // classes = ['red','bold']
   }
 
   return (
     // <StyleRoot>
-    <div className="App">
+    <div className={classes.App}>
       <h1>This is a React Test Site</h1>
-      <p className={classes.join(' ')}>This is really working!</p>
+      <p className={assignedClasses.join(' ')}>This is really working!</p>
       <button 
       style={style}
       onClick={this.togglePersonsHandler}>Toggle Persons</button>
